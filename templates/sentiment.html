@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Sentiment Analysis</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{{ url_for('static',filename='img/icon.png') }}" rel="icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Template Main CSS File -->
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/text.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <br>
+    <h2 style="color: aliceblue; text-align: center;">Enter Some texts</h2>
+    <div class="paperwrapper">
+        <div class="paper">
+            <div class="textwrapper">
+                <!--<textarea placeholder="Write something..." type="text" name="words" action='/sentiment'></textarea>-->
+                <form method='post' action="/sentiment">
+                    <!--<input type='text' name='result'>-->
+                    <textarea type='text' name='result' row="15" placeholder="Write something..."></textarea>
+                    <div class="button_cont">
+                        <button class="btn btn-outline-success" type='submit'>Analyze</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a href="/return"><input type="button" value="Home" class="button" style="margin-bottom: 20px;"></a>
+    <div>
+        <div class="wrapper" style="float: right;">
+            <span class="square">
+                <a class="before after" href="https://www.todaytip.net/happiness-messages/" target="_blank">Positive
+                    sample texts</a></span>
+        </div>
+        <div class="wrapper" style="float: right;">
+            <span class="square">
+                <a class="before after"
+                    href="https://www.theguardian.com/film/2019/oct/02/why-so-stupid-how-joker-is-too-juvenile-to-be-provocative"
+                    target="_blank">Neutral
+                    sample texts</a></span>
+        </div>
+        <div class="wrapper" style="float: right;">
+            <span class="square">
+                <a class="before after" href="https://www.imdb.com/title/tt7286456/plotsummary?ref_=tt_stry_pl#synopsis"
+                    target="_blank">Negative
+                    sample texts</a></span>
+        </div>
+    </div>
+</body>
+
+</html>

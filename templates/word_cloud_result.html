@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, minimal-ui">
+    <meta name="description" content="Text Mining Group 3 midterm project">
+    <title>Text Mining Group 3</title>
+    <link href="{{ url_for('static',filename='img/icon.png') }}" rel="icon">
+    <link href="{{ url_for('static',filename='css/text.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center">
+        <a href="/return"><input type="button" value="Home" class="button"></a>
+        <a href="/return_cloud"><input type="button" value="Word Cloud" class="button1"></a>
+        <h2>World Cloud</h2>
+        <img height="700" width="780" src="{{ url_for('static', filename= fig_name ) }}" />
+        <!-- <image id="test_image" src="./test-image.png" style="width: 580px" /> -->
+    </div>
+</body>
+
+</html>

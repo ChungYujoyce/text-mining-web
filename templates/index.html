@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Text Mining Group 3</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{{ url_for('static',filename='img/icon.png') }}" rel="icon">
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='vendor/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='vendor/venobox/venobox.css') }}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+    <!-- ======= Header/ Navbar ======= -->
+    <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll" href="#page-top">Text Max</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+                aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll active" href="#page-top">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="#service">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="#work">Work</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ======= Intro Section ======= -->
+    <div id="home" class="intro route bg-image">
+        <div class=" overlay-itro"></div>
+        <div class="intro-content display-table">
+            <div class="table-cell">
+                <div class="container">
+                    <!--<p class="display-6 color-d">Hello, world!</p>-->
+                    <h1 class="intro-title mb-4">Text Mining Project</h1>
+                    <h1 style="font-size: 30px"><span class="text_1">Words have energy and power with the
+                            ability</span><span class="text_2">
+                            to help, to heal, to hinder, to harm, to humiliate and to humble.</span></h1>
+
+                    <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+                </div>
+            </div>
+        </div>
+    </div><!-- End Intro Section -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about-mf sect-pt4 route">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="box-shadow-full">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="about-img">
+                                        <img src="{{ url_for('static', filename='img/group.jpg') }}"
+                                            class="img-fluid rounded b-shadow-a" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="about-me pt-4 pt-md-0">
+                                        <div class="title-box-2">
+                                            <h5 class="title-left">
+                                                About us
+                                            </h5>
+                                        </div>
+                                        <p class="lead">
+                                            Hello, everyone. We are students in National Tsing Hua University.
+                                            Now, we are participated in the course of Text mining.
+                                            This is our mid-term project. Please enjoy it!
+
+                                        </p>
+                                        <p class="lead">
+                                            黃中鈺(Joyce) : <br>Student major in computer science, junior.<br><br>
+                                            黃晨瑋(Jimmy) : <br>Student major in computer science, junior.<br><br>
+                                            Shreya Upadhyay : <br>Student major in Electrical Engineer, PhD.<br><br>
+                                            簡婉軒(Winnie) : <br>Student major in Electrical Engineer, PhD.<br>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="service" class="services-mf route">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="title-box text-center">
+                            <h3 class="title-a">
+                                Description
+                            </h3>
+
+                            <div class="line-mf"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="service-box">
+                            <div class="service-ico">
+                                <span class="ico-circle"><i class="ion-monitor"></i></span>
+                            </div>
+                            <div class="service-content">
+                                <h2 class="s-title" style="color: cadetblue;">Sentiment Analysis</h2>
+                                <p class="s-description text-center">
+                                    We use sentiment analysis API to detect the sentiment of texts.
+                                    Users can type words or a short paragraph in an article,
+                                    we will provide users the possible attitude.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="service-box">
+                            <div class="service-ico">
+                                <span class="ico-circle"><i class="ion-code-working"></i></span>
+                            </div>
+                            <div class="service-content">
+                                <h2 class="s-title" style="color: cadetblue;">Word Cloud</h2>
+                                <p class="s-description text-center">
+                                    We use...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <div class="service-box">
+                            <div class="service-ico">
+                                <span class="ico-circle"><i class="ion-camera"></i></span>
+                            </div>
+                            <div class="service-content">
+                                <h2 class="s-title" style="color: cadetblue;">Coming soon..</h2>
+                                <p class="s-description text-center">
+                                    Not done yet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <div class="service-ico">
+                                <span class="ico-circle"><i class="ion-android-phone-portrait"></i></span>
+                            </div>
+                            <div class="service-content">
+                                <h2 class="s-title" style="color: cadetblue;">Coming soon..</h2>
+                                <p class="s-description text-center">
+                                    Not done yet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <div class="service-ico">
+                                <span class="ico-circle"><i class="ion-paintbrush"></i></span>
+                            </div>
+                            <div class="service-content">
+                                <h2 class="s-title" style="color: cadetblue;">Coming soon..</h2>
+                                <p class="s-description text-center">
+                                    Not done yet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <div class="service-ico">
+                                <span class="ico-circle"><i class="ion-stats-bars"></i></span>
+                            </div>
+                            <div class="service-content">
+                                <h2 class="s-title" style="color: cadetblue;">Coming soon..</h2>
+                                <p class="s-description text-center">
+                                    Not done yet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </section><!-- End Services Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="work" class="portfolio-mf sect-pt4 route">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="title-box text-center">
+                            <h3 class="title-a">
+                                Work results
+                            </h3>
+
+                            <div class="line-mf"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="work-box">
+                            <a href="{{ url_for('static', filename='img/sentiment.jpg') }}" data-gall="portfolioGallery"
+                                class="venobox">
+                                <div class="work-img">
+                                    <a href="/sentiment"><img
+                                            src="{{ url_for('static', filename='img/sentiment.jpg') }}" alt=""
+                                            class="img-fluid"></a>
+                                </div>
+                                <div class="work-content">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h2 class="w-title"><a href="/sentiment">Sentiment Analysis</a></h2>
+                                            <div class="w-more">
+                                                <span class="w-ctegory">Propertiy 1</span> / <span class="w-date">April
+                                                    2020
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <span class="ion-ios-plus-outline"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="work-box">
+                            <a href="{{ url_for('static', filename='img/cloud.png') }}" data-gall="portfolioGallery"
+                                class="venobox">
+                                <div class="work-img">
+                                    <a href="/word_cloud"><img src="{{ url_for('static', filename='img/cloud.png') }}"
+                                            alt="" class="img-fluid"></a>
+                                </div>
+                                <div class="work-content">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h2 class="w-title"><a href="/word_cloud">Word Cloud</a></h2>
+                                            <div class="w-more">
+                                                <span class="w-ctegory">Propertiy 2</span> / <span class="w-date">April.
+                                                    2020</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <span class="ion-ios-plus-outline"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-4">
+                        <div class="work-box">
+                            <a href="{{ url_for('static', filename='img/work-3.jpg') }}" data-gall="portfolioGallery"
+                                class="venobox">
+                                <div class="work-img">
+                                    <img src="{{ url_for('static', filename='img/work-3.jpg') }}" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="work-content">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h2 class="w-title">Coming soon..</h2>
+                                            <div class="w-more">
+                                                <span class="w-ctegory">Web Design</span> / <span class="w-date">April.
+                                                    2020</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <span class="ion-ios-plus-outline"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="work-box">
+                            <a href="{{ url_for('static', filename='img/work-4.jpg') }}" data-gall="portfolioGallery"
+                                class="venobox">
+                                <div class="work-img">
+                                    <img src="{{ url_for('static', filename='img/work-4.jpg') }}" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="work-content">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h2 class="w-title">Coming soon..</h2>
+                                            <div class="w-more">
+                                                <span class="w-ctegory">Web Design</span> / <span class="w-date">April.
+                                                    2020</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <span class="ion-ios-plus-outline"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="work-box">
+                            <a href="{{ url_for('static', filename='img/work-5.jpg') }}" data-gall="portfolioGallery"
+                                class="venobox">
+                                <div class="work-img">
+                                    <img src="{{ url_for('static', filename='img/work-5.jpg') }}" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="work-content">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h2 class="w-title">Coming soon..</h2>
+                                            <div class="w-more">
+                                                <span class="w-ctegory">Web Design</span> / <span class="w-date">April.
+                                                    2020</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <span class="ion-ios-plus-outline"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="work-box">
+                            <a href="{{ url_for('static', filename='img/work-6.jpg') }}" data-gall="portfolioGallery"
+                                class="venobox">
+                                <div class="work-img">
+                                    <img src="{{ url_for('static', filename='img/work-6.jpg') }}" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="work-content">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h2 class="w-title">Coming soon..</h2>
+                                            <div class="w-more">
+                                                <span class="w-ctegory">Web Design</span> / <span class="w-date">April.
+                                                    2020</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <span class="ion-ios-plus-outline"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>-->
+
+                </div>
+            </div>
+        </section><!-- End Portfolio Section -->
+
+
+
+    </main><!-- End #main -->
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+    <!-- Template Main JS File -->
+</body>
+
+</html>

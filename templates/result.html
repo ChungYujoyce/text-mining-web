@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sentiment result</title>
+    <!-- Favicons -->
+    <link href="{{ url_for('static',filename='img/icon.png') }}" rel="icon">
+
+    <link href="{{ url_for('static',filename='css/text.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balthazar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url({{backimg}});
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        .column {
+            float: left;
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        .left {
+            width: 5%;
+        }
+
+        .right {
+            width: 25%;
+        }
+
+        .middle {
+            width: 40%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <a href="/return"><input type="button" value="Home" class="button"></a>
+    <a href="/return_sentiment"><input type="button" value="Sentiment" class="button1"></a>
+
+    <div style="width: 70%; margin: 0 auto;">
+        <div style="padding:20px; color:rgb(252, 239, 125); {{font}}">
+            <h3>{{A}}</h3>
+        </div>
+        <div class="row">
+            <div class="column left">
+            </div>
+            <div class="column middle">
+                <h2 style="color: rgb(53, 19, 19);">Probability</h2>
+                <h1 style="color: rgb(8, 8, 8); font-family: 'Lobster', cursive;">Positive: {{B1}}</h1>
+                <h1 style="color: rgb(8, 8, 8); font-family: 'Lobster', cursive;">Neutral: {{B2}}</h1>
+                <h1 style="color: rgb(8, 8, 8); font-family: 'Lobster', cursive;">Negative: {{B3}}</h1>
+            </div>
+            <div class="column right">
+                <h1 style="color: rgb(230, 20, 20); font-family: 'Lobster', cursive; margin-right: 20px;">Label: {{B4}}
+                </h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

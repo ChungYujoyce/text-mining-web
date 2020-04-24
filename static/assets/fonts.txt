@@ -1,0 +1,8 @@
+1. Health - Broadway
+2. Education - Cooper Black
+3. Medical - Brush Script MT
+4. Sports - Gill Sans Ultra Bold
+5. Business - Gloucester MT Extra Condensed
+6. Technology - Copperplate Gothic Bold
+7. Entertainment - Harlow Solid Italic
+8. Others - Wide-Latin
