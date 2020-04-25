@@ -11,6 +11,12 @@ pip install matplotlib
 pip install wordcloud
 pip install nltk
 pip install requests
+pip install sklearn
+pip install pandas
+```
+If sklearn is not the version 0.22.2.post1.
+```
+pip install --upgrade scikit-learn
 ```
 
 ## Functions
