@@ -46,8 +46,8 @@ def word_cloud():
         input_text = request.form.get('news')
         input_genre = request.form.get("selectgenre")
         #picname = request.form.get('genre')
-        fig_name, font_path = process_cloud(input_text, str(input_genre))
-        return render_template('word_cloud_result.html', fig_name = str(fig_name), font_path=str(font_path)) 
+        fig_name, font_path, back = process_cloud(input_text, str(input_genre))
+        return render_template('word_cloud_result.html', fig_name = str(fig_name), font_path=str(font_path), back=str(back)) 
     return render_template('word_cloud.html', data=[{'name':'Business'}, {'name':'Education'},{'name':'Entertainment'}, {'name':'Health'},
                                                     {'name':'Medical'}, {'name':'Sports'}, {'name':'Technology'}, {'name':'Others'}])
 #app.route('/sentiment', methods=['GET','POST'])
