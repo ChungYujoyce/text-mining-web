@@ -1,0 +1,3 @@
+Put your news (.txt) and textMining-preprocess.py and textMining-preprocess.sh in same folder,
+then run `bash textMining-preprocess.sh` in terminal.
+It will automatically process all news and write new files which names are "processed-<original name>.txt"
