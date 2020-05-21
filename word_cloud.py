@@ -2,16 +2,17 @@ import sys, os, datetime
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 from glob import glob
-import nltk
 from nltk.corpus import stopwords
-from nltk import PorterStemmer
+from nltk import PorterStemmer, word_tokenize
 from nltk.stem import WordNetLemmatizer
 import pandas as pd
 import numpy as np
 import math, re, pickle
 from sklearn import model_selection, preprocessing
 from sklearn.feature_extraction.text import TfidfVectorizer
-import sklearn
+import nltk
+nltk.download('punkt')
+
 def process_cloud(input_text, ingenre):
     TRAINING_DATA_PATH = "./ProcessedNewsData/**/*.txt"
     RANDOM_FOREST_PKL = "./RandomForest.pkl"
@@ -32,7 +33,7 @@ def process_cloud(input_text, ingenre):
     doc_all = {}
     for i in txt_file:
         text = open(i, encoding = "latin-1").read().lower()
-        doc_all[i.split("\\")[2].split(".")[0]] = text ########## WARNING i.split("/")[idx] -> change the idx
+        doc_all[i.split("/")[2].split(".")[0]] = text ########## WARNING i.split("/")[idx] -> change the idx
         # i: the absolute path of abc.txt, i.split("/")[3]: abc.txt
 
     x = list(doc_all.values()) # x for training
@@ -75,8 +76,8 @@ def process_cloud(input_text, ingenre):
             idx = j
             break
     
-    font_path = os.getcwd() + "\\static\\assets\\" + fonts[j]
-    background_image_path = os.getcwd() + "\\static\\assets\\" + genres[j] + ".JPG"
+    font_path = os.getcwd() + "/static/assets/" + fonts[j]
+    background_image_path = os.getcwd() + "/static/assets/" + genres[j] + ".JPG"
     background = "static/assets/" + genres[i] + ".JPG"
 
     nltk_stopwords = stopwords.words('english')
@@ -90,7 +91,7 @@ def process_cloud(input_text, ingenre):
     plt.xticks([])
     plt.yticks([])
     cloud(input_text, Stopwords, font_path)
-    PATH = os.getcwd() + "\\static\\cloud_result\\"
+    PATH = os.getcwd() + "/static/cloud_result/"
     current_time = str(datetime.datetime.now()).split(" ")[1].replace(":", "-").replace(".", "-") # 2020-04-20 23:57:44.019598
     fig_name = fig_name + current_time
     plt.savefig(os.path.join(PATH, fig_name)) # Save to same folder as this python file
@@ -106,7 +107,7 @@ def cloud(text, Stopwords, font_path):
     plt.imshow( word, cmap = plt.get_cmap('jet'), alpha = 0.8)
 
 def tokenize(text):
-    tokens = nltk.word_tokenize(text)
+    tokens = word_tokenize(text)
     stems = []
     for item in tokens:
         stems.append(PorterStemmer().stem(item))

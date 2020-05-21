@@ -8,6 +8,7 @@
 conda create -n textMining python=3.6
 activate textMining
 pip install matplotlib
+pip install flask-script
 pip install wordcloud
 pip install nltk
 pip install requests
