@@ -3,14 +3,12 @@ from config import DevConfig
 from sentiment import get_all_words, get_tweets_for_model, remove_noise,process
 from datetime import timedelta
 from word_cloud import process_cloud, cloud
+from prediction import detecting_fake_news
 import requests
-
 import json
 
+
 app = Flask(__name__)
-#app.config['DEBUG'] =True
-#app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=1)
-#app.config.from_object(DevConfig)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -32,9 +30,6 @@ def sentiment():
             backimg = "static/img/neutral.jpg"
             font = "font-family: 'Balthazar', serif;"
 
-
-        #obj = json.loads(str(abc.text)) ERROR
-        # print(dump(abc))
         return render_template('result.html', A= str(userinput), B1=str(obj["probability"]["pos"]),B2=str(obj["probability"]["neutral"]),B3=str(obj["probability"]["neg"]),B4=str(obj["label"]), backimg = backimg, font=font)
         
     return render_template('sentiment.html')
@@ -50,13 +45,6 @@ def word_cloud():
         return render_template('word_cloud_result.html', fig_name = str(fig_name), font_path=str(font_path), back=str(back)) 
     return render_template('word_cloud.html', data=[{'name':'Business'}, {'name':'Education'},{'name':'Entertainment'}, {'name':'Health'},
                                                     {'name':'Medical'}, {'name':'Sports'}, {'name':'Technology'}, {'name':'Others'}])
-#app.route('/sentiment', methods=['GET','POST'])
-#def sentiment():
- #   if request.method == 'POST':
- #      custom_tweet = request.form.get('result')
- #       a,b,c,d,e = process(custom_tweet)
- #       return render_template('result.html', A=a, B=b, C=c, D=d, E=e)
- #   return render_template('sentiment.html')
 
 @app.route('/return')
 def back():
@@ -70,6 +58,20 @@ def back_1():
 def back_2():
  	return redirect(url_for('sentiment'))
 
+@app.route('/predict', methods=['GET','POST'])
+def predict(): 
+    back = 'static/img/back.jpg'
+    if request.method == 'POST':
+        input_text = request.form.get('news')
+        model = request.form.get('selectmodel')
+        pred, prob = detecting_fake_news(input_text, model)
+        return render_template('predict.html', back=back, pred=str(pred), prob=str(prob))
+    return render_template('predict.html', back=back, 
+    data=[{'name':'SVM'}, {'name':'Logistic'},{'name':'SGD'}, {'name':'Naive-bayes'}, {'name':'RandomForest'}])
+
+@app.route('/return_predict')
+def back_3():
+ 	return redirect(url_for('predict'))
+
 if __name__ == '__main__':
-    app.debug = True
     app.run()
