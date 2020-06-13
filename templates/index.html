@@ -21,6 +21,39 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+
+        /*字體*/
+        html,
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        form,
+        label,
+        fieldset,
+        input,
+        p,
+        span,
+        a,
+        blockquote,
+        th,
+        td {
+            font-family: 'cwTeXFangSong', serif !important;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -143,6 +176,7 @@
                                     We use sentiment analysis API to detect the sentiment of texts.
                                     Users can type words or a short paragraph in an article,
                                     we will provide users the possible attitude.
+                                    <br>
                                 </p>
                             </div>
                         </div>
@@ -155,26 +189,30 @@
                             <div class="service-content">
                                 <h2 class="s-title" style="color: cadetblue;">Word Cloud</h2>
                                 <p class="s-description text-center">
-                                    User can input some texts and choose the texts related genre,
-                                    we will display a word cloud and correspondng background image.
+                                    User can input texts and choose the texts related genre,
+                                    we will use text classificaiotn method to detect the correct genre,
+                                    then display a word cloud and correspondng background image.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-md-4">
+                    <div class="col">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle"><i class="ion-camera"></i></span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title" style="color: cadetblue;">Coming soon..</h2>
+                                <h2 class="s-title" style="color: cadetblue;">Fake News Detection</h2>
                                 <p class="s-description text-center">
-                                    Not done yet.
+                                    We use macine learning methods, which are SVM, SGD, Logistic regression and so on,
+                                    to build models to detect whether the news is authentical.
+                                    User can input a short news, we will provide a predicted label
+                                    and a number of probability of the truth.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <!--<div class="col">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle"><i class="ion-android-phone-portrait"></i></span>
@@ -288,20 +326,20 @@
                             </a>
                         </div>
                     </div>
-                    <!--<div class="col-md-4">
+                    <div class="col">
                         <div class="work-box">
-                            <a href="{{ url_for('static', filename='img/work-3.jpg') }}" data-gall="portfolioGallery"
+                            <a href="{{ url_for('static', filename='img/news.jpg') }}" data-gall="portfolioGallery"
                                 class="venobox">
                                 <div class="work-img">
-                                    <img src="{{ url_for('static', filename='img/work-3.jpg') }}" alt=""
-                                        class="img-fluid">
+                                    <a href="/predict"><img src="{{ url_for('static', filename='img/news.jpg') }}"
+                                            alt="" class="img-fluid"></a>
                                 </div>
                                 <div class="work-content">
                                     <div class="row">
                                         <div class="col-sm-8">
-                                            <h2 class="w-title">Coming soon..</h2>
+                                            <h2 class="w-title"><a href="/predict">Fake News Detection</a></h2>
                                             <div class="w-more">
-                                                <span class="w-ctegory">Web Design</span> / <span class="w-date">April.
+                                                <span class="w-ctegory">Property 3</span> / <span class="w-date">June.
                                                     2020</span>
                                             </div>
                                         </div>
@@ -315,7 +353,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <!--<div class="col-md-4">
                         <div class="work-box">
                             <a href="{{ url_for('static', filename='img/work-4.jpg') }}" data-gall="portfolioGallery"
                                 class="venobox">
