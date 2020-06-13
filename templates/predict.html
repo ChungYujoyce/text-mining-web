@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, minimal-ui">
+    <meta name="description" content="Text Mining Group 3 midterm project">
+    <title>Text Mining Group 3</title>
+    <!-- Google Fonts -->
+    <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static',filename='img/icon.png') }}" rel="icon">
+    <link href="{{ url_for('static',filename='css/fake_news.css') }}" rel="stylesheet">
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+
+        /*字體*/
+        html,
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        form,
+        label,
+        fieldset,
+        input,
+        p,
+        span,
+        a,
+        blockquote,
+        th,
+        td {
+            font-family: 'cwTeXFangSong', serif !important;
+        }
+
+        body {
+            background-image: url({{back}});
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center">
+        <a href="/return"><input type="button" value="Home" class="button"></a>
+        <a href="/return_predict"><input type="button" value="Back" class="button1"></a>
+
+        <h2>Fake News Detection</h2>
+        <form method='post' action="/predict">
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <div class="dropdown" style="margin-left: 45px;">
+                        <div class="input-group-prepend" style="width: 70%;">
+                            <label class="input-group-text" for="inputGroupSelect01">Models</label>
+                        </div>
+                        <select class="custom-select" name="selectmodel" style="width: 70%;">
+                            {% for o in data %}
+                            <option value="{{ o.name }}">{{ o.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-8">
+
+                    <h2>Input a news</h2>
+                    <textarea name="news" id="comment" placeholder="Type something..."></textarea>
+                    <br><br><br>
+                    <div class="button_cont">
+                        <button class="btn btn-info" type='submit'>Detect</button></div>
+                </div>
+            </div>
+        </form>
+        <h4>The given statement is: {{pred}}</h4>
+        <h4>The truth probability score is: {{prob}}</h4>
+    </div>
+</body>
+
+</html>
