@@ -1,12 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
-from config import DevConfig
 from sentiment import get_all_words, get_tweets_for_model, remove_noise,process
 from datetime import timedelta
 from word_cloud import process_cloud, cloud
 from prediction import detecting_fake_news
 import requests
 import json
-
 
 app = Flask(__name__)
 
